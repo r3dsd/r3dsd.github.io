@@ -7,7 +7,6 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   max-width: 400px;
   margin: 20px auto;
-  font-family: 'Noto Sans', sans-serif;
   color: #333;
 
   .song-title {
@@ -79,34 +78,40 @@
     margin-top: 1rem;
   }
 
-  .lyric-line {
-    display: block; // 줄바꿈 강제
+  .lyric-line-original {
+    font-family: "LINESeedJP_OTF_Rg";
+    display: block;
     font-weight: 600;
   }
 
-  .lyric-line:nth-of-type(3n) {
-    margin-bottom: 24px; // 3번째마다 추가 마진
-  }
-}
-
-@each $name, $color in $lyric-colors {
-  .#{"lyric-" + $name} {
-    color: $color;
+  .lyric-line-pronunciation {
+    font-family: "LINESeedKR-Rg";
+    display: block;
     font-weight: 600;
   }
-}
 
-.lyric-original {
-  color: $lyric-original-color;
-  font-weight: 600;
-}
+  .lyric-line-translate {
+    font-family: "LINESeedKR-Rg";
+    display: block;
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
 
-.lyric-pronunciation {
-  color: $lyric-pronunciation-color;
-  font-weight: 600;
-}
+  @each $name, $color in $lyric-colors {
+    .#{"lyric-" + $name} {
+      color: $color;
+    }
+  }
 
-.lyric-translate {
-  color: $lyric-translate-color;
-  font-weight: 600;
+  .lyric-original-color {
+    color: $lyric-original-color;
+  }
+
+  .lyric-pronunciation-color {
+    color: $lyric-pronunciation-color;
+  }
+
+  .lyric-translate-color {
+    color: $lyric-translate-color;
+  }
 }

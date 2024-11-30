@@ -8,23 +8,22 @@ module Jekyll
     def render(context)
       content = super.strip
 
-      # 매개변수로 받은 클래스 이름만 처리
-      default_classes = {
-        "original" => "lyric-original",
-        "pronunciation" => "lyric-pronunciation",
-        "translate" => "lyric-translate"
+      default_color_classes = {
+        "original" => "lyric-original-color",
+        "pronunciation" => "lyric-pronunciation-color",
+        "translate" => "lyric-translate-color"
       }
 
-      classes = default_classes.merge(@options)
+      classes = default_color_classes.merge(@options)
 
-      # <br> 제거, <span> 태그만 생성
       lines = content.split("\n").map.with_index do |line, index|
-        css_class = case index % 3
-                    when 0 then classes["original"]
-                    when 1 then classes["pronunciation"]
-                    when 2 then classes["translate"]
+        line_name = case index % 3
+                    when 0 then "original"
+                    when 1 then "pronunciation"
+                    when 2 then "translate"
                     end
-        "<span class='lyric-line #{css_class}'>#{line}</span>"
+        color_class = classes[line_name]
+        "<span class='lyric-line-#{line_name} #{color_class}'>#{line}</span>"
       end
 
       "<div class='lyrics-box'>

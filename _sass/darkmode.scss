@@ -1,33 +1,8 @@
 @import "color";
+
 body.dark-theme {
   background:#1E1E1F;
-
-  .sukinauta {
-    background: linear-gradient(135deg, #616161, #665669);
-    border-left: 6px solid #d8678d;
-  }
-
-  .lyrics-box {
-    background-color: #1E1E1F;
-  }
-  
-  .song-info-box {
-    background-color: #1E1E1F;
-    border: 1px solid #646464;
-  }
-
-  @function dark-mode-color($color) {
-    @return lighten($color, 20%);
-  }
-
-  @each $name, $color in $lyric-colors {
-    .#{"lyric-" + $name} {
-      color: dark-mode-color($color);
-    }
-  }
-
   a, span, p, h1, h2, h3, i, mark { color:#aaa; }
-
   svg { fill:#aaa; }
 
   #stars, #loading { background:#1E1E1F; }
@@ -97,6 +72,47 @@ body.dark-theme {
         text-decoration-color:mediumseagreen;
       }
     }
+
+    .sukinauta {
+      background: linear-gradient(135deg, #616161, #665669);
+      border-left: 6px solid #d8678d;
+    }
+
+    .lyrics-box {
+      background-color: #1E1E1F;
+      @function dark-mode-color($color) {
+        @return if(lightness($color) < 50%, lighten($color, 30%), $color);
+      }
+          
+  
+      @each $name, $color in $lyric-colors {
+        .#{"lyric-" + $name} {
+          color: dark-mode-color($color);
+        }
+      }
+
+      .lyric-original {
+        color: dark-mode-color($lyric-original-color);
+        font-weight: 600;
+      }
+    
+      .lyric-pronunciation {
+        color: dark-mode-color($lyric-pronunciation-color);
+        font-weight: 600;
+      }
+    
+      .lyric-translate {
+        color: dark-mode-color($lyric-translate-color);
+        font-weight: 600;
+      }
+    }
+    
+    .song-info-box {
+      background-color: #1E1E1F;
+      border: 1px solid #646464;
+    }
+
+    
 
     code,
     .highlighter-rouge .highlight {
