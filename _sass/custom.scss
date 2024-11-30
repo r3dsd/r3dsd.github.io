@@ -1,0 +1,112 @@
+/* 노래 정보용 */
+.song-info-box {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  max-width: 400px;
+  margin: 20px auto;
+  font-family: 'Noto Sans', sans-serif;
+  color: #333;
+
+  .song-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+  }
+
+  .song-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      font-size: 0.9rem;
+      line-height: 1.25;
+
+      strong {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+
+
+/* 카후 불러보았다 헤더 용 */
+@import "color";
+
+.sukinauta {
+    background: $sukina_uta_background;
+    border-left: 6px solid $kaf-pink;
+    padding: 20px 25px;
+    margin: 20px 0;
+    border-radius: 15px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 18px;
+    line-height: 1.9;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* 유튜브 용 */
+.embed-video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+}
+
+/* 가사 블럭 */
+.lyrics-box {
+  background-color: #fafafa;
+  border-radius: 12px; // 더 부드러운 곡선
+  padding-top: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); // 부드러운 그림자
+  font-family: 'Georgia', serif; // 감성적인 서체
+  text-align: center;
+  line-height: 1.25;
+  max-width: 650px;
+  border: 1px solid rgba(0, 0, 0, 0.1); // 테두리 추가로 디테일 강화
+
+  .lyrics-title {
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .lyric-line {
+    display: block; // 줄바꿈 강제
+    font-weight: 600;
+  }
+
+  .lyric-line:nth-of-type(3n) {
+    margin-bottom: 24px; // 3번째마다 추가 마진
+  }
+}
+
+@each $name, $color in $lyric-colors {
+  .#{"lyric-" + $name} {
+    color: $color;
+    font-weight: 600;
+  }
+}
+
+.lyric-original {
+  color: $lyric-original-color;
+  font-weight: 600;
+}
+
+.lyric-pronunciation {
+  color: $lyric-pronunciation-color;
+  font-weight: 600;
+}
+
+.lyric-translate {
+  color: $lyric-translate-color;
+  font-weight: 600;
+}

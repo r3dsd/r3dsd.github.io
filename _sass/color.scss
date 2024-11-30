@@ -1,0 +1,28 @@
+// kaf Colors
+$kaf-pink: #ec407a;
+$kaf-purple: #e1bee7;
+$kaf-salgu: #fce4ec;
+$sukina_uta_background: linear-gradient(135deg, $kaf-salgu, $kaf-purple);
+// Primary Colors
+$primary: #3498db ;   // 밝은 파랑
+$secondary: #2ecc71 ; // 밝은 초록
+$tertiary: #e74c3c  ; // 밝은 빨강
+
+// Neutral Colors
+$white: #ffffff;
+$black: #000000;
+$gray-light: #f5f5f5;
+$gray: #bdc3c7;
+$gray-dark: #7f8c8d;
+
+// Lyrics Colors
+// SASS에서 색상 정의
+$lyric-colors: (
+  "black": #333,
+  "gray": #aaa,
+  "soft-blue": #6f7ebf
+);
+
+$lyric-original-color: map-get($map: $lyric-colors, $key: "black");
+$lyric-pronunciation-color: map-get($map: $lyric-colors, $key: "gray");
+$lyric-translate-color: map-get($map: $lyric-colors, $key: "soft-blue");
