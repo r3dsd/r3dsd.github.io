@@ -31,9 +31,9 @@
         {% endif %}
     {% endfor %}
 
-    {% assign first_level_pages = first_level_pages | sort: 'url' %}
-    {% assign second_level_pages = second_level_pages | sort: 'url' %}
-    {% assign third_level_pages = third_level_pages | sort: 'url' %}
+    {% assign first_level_pages = first_level_pages %}
+    {% assign second_level_pages = second_level_pages  %}
+    {% assign third_level_pages = third_level_pages %}
 
     <ul class="nav-list">
     {%- for node in first_level_pages -%}

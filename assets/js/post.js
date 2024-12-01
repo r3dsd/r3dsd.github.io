@@ -112,13 +112,6 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     }
 
-    // Move to Comment
-    document.getElementById('comments-counter').addEventListener('click', function(){
-        document.getElementById("giscus").scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-
     // Code highlighter
     if (currentTheme === 'dark'){
         // Disable highlighter default color theme

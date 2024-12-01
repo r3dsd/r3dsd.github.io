@@ -50,14 +50,16 @@
 
 <script src="{{ '/assets/js/fontfaceobserver.js' | prepend: site.baseurl }}" type="text/javascript"></script>
 <script type="text/javascript">
-    const nunitoObserver = new FontFaceObserver('Nunito Sans');
-    const righteousObserver = new FontFaceObserver('Righteous');
-    const latoObserver = new FontFaceObserver('Lato');
+    const JpRgObserver = new FontFaceObserver('LINESeedJP_OTF_Rg');
+    const JpBdObserver = new FontFaceObserver('LINESeedJP_OTF_Bd');
+    const KrRgObserver = new FontFaceObserver('LINESeedKR-Rg');
+    const KrBdObserver = new FontFaceObserver('LINESeedKR-Bd');
   
     Promise.all([
-        nunitoObserver.load(),
-        righteousObserver.load(),
-        latoObserver.load(),
+        JpRgObserver.load(),
+        JpBdObserver.load(),
+        KrRgObserver.load(),
+        KrBdObserver.load(),
     ]).then(function(){
         document.documentElement.className += " fonts-loaded";
     });

@@ -15,7 +15,7 @@ gem "jekyll", ">= 3.9", "< 5.0"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
-  # gem "jekyll-r3-blog", "0.1.0", :path => '/home/[name]/utils/jekyll-r3-blog'
+  # gem "jekyll-r3-blog", "0.1.0", :path => '/home/yehwan/utils/jekyll-r3-blog'
 end
 
 gem "jekyll-sitemap", "~> 1.3"
